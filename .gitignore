@@ -1,3 +1,6 @@
+# 自定义配置
+output/*
+
 # Logs
 logs
 *.log

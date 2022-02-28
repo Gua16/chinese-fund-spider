@@ -42,9 +42,9 @@ function array2xlsx(array){
         var excelData=[]
         {
             var addInfo={}
-            addInfo.name='Sheet 1'
+            addInfo.name='基金排名'
             addInfo.data=[
-                ["基金代码","基金名称","基金简写","统计日期","单位净值","累计净值","日增长","周增长","月增长","近3月增长","近6月增长","近1年增长","近2年增长","近3年增长","今年来增长","成立来增长","成立时间","不知道","不知道","原始费率","实际费率","不知道","不知道","不知道","不知道"]
+                ["基金代码","基金名称","基金简写","净值日期","单位净值","累计净值","日增长","周增长","月增长","近3月增长","近6月增长","近1年增长","近2年增长","近3年增长","今年来增长","成立来增长","成立时间","不知道","不知道","原始费率","实际费率","不知道","不知道","不知道","不知道"]
             ]
             array.forEach(element => {
                 addInfo.data.push(element)
@@ -53,6 +53,7 @@ function array2xlsx(array){
         }
 
         var buffer=xlsx.build(excelData)
+
         fs.writeFile(xlsxPath,buffer,(err)=>{
             if(!err){
                 console.log('xlsx 文件写入完毕');
